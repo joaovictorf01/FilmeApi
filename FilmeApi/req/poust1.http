@@ -3,7 +3,7 @@ content-type: application/json
 
 
 {
-    "Titulo" : "bigbig",
+    "Titulo" : "Harry potter e a pedra filosofal",
         "Diretor" : "eu",
         "Duracao" : 60,
         "Genero" : "doidice"

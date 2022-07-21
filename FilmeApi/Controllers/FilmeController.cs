@@ -19,5 +19,10 @@ namespace FilmesApi.Controllers
         {
             filmes.Add(filme);
         }
+        [HttpGet]
+        public IEnumerable<Filme> RecuperaFilmes()
+        {
+            return filmes;
+        }
     }
 }
