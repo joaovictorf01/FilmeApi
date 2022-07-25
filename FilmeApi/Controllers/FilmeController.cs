@@ -7,27 +7,35 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace FilmesApi.Controllers;
-
 [ApiController]
 [Route("[controller]")]
 public class FilmeController : ControllerBase
 {
     private static List<Filme> filmes = new List<Filme>();
+    private static int id = 1;
 
     [HttpPost]
-    public void AdicionaFilme([FromBody] Filme filme)
+    public IActionResult AdicionaFilme([FromBody] Filme filme)
     {
+        filme.Id = id++;
         filmes.Add(filme);
+        return CreatedAtAction(nameof(RecuperaFilmesPorId), new { Id = filme.Id }, filme);
     }
+
     [HttpGet]
-    public IEnumerable<Filme> RecuperaFilmes()
+    public IActionResult RecuperaFilmes()
     {
-        return filmes;
+        return Ok(filmes);
     }
-[HttpGet("{id}")]
-    public Filme RecuperaFilme(int id)
+
+    [HttpGet("{id}")]
+    public IActionResult RecuperaFilmesPorId(int id)
     {
-        return filmes.FirstOrDefault(f => f.Id == id);
+        Filme filme = filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme != null)
+        {
+            return Ok(filme);
+        }
+        return NotFound();
     }
-        
 }
