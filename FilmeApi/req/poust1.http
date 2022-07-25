@@ -6,5 +6,6 @@ content-type: application/json
     "Titulo" : "Harry potter e a pedra filosofal",
         "Diretor" : "eu",
         "Duracao" : 60,
-        "Genero" : "doidice"
+        "Genero" : "doidice",
+        "Id" :1
 }   

@@ -1,2 +1,3 @@
-GET http://localhost:5141/filme  HTTP/1.1
+GET http://localhost:5141/filme?Id=1  HTTP/1.1
 header: Content-Type: application/json
+
