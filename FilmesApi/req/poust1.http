@@ -1,0 +1,11 @@
+POST http://localhost:5000/filme   HTTP/1.1
+content-type: application/json
+
+
+{
+    "Titulo" : "Harry potter e a pedra filosofal",
+        "Diretor" : "eu",
+        "Duracao" : 60,
+        "Genero" : "doidice",
+        
+}   
